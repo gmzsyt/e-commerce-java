@@ -2,6 +2,7 @@ package com.ecommerce.ecommerce.app.controller;
 
 import com.ecommerce.ecommerce.app.entities.Order;
 import com.ecommerce.ecommerce.app.services.OrderService;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,9 +25,12 @@ public class OrderController {
     public Order getOneOrder(@PathVariable Long orderId){
         return  orderService.getOneUser(orderId);
     }
-
     @PostMapping
     public Order createOneOrder(@RequestBody Order newOrder){
-        return orderService.createOneOrder(newOrder);
-    }
+        return orderService.createOneOrder(newOrder);}
+   @DeleteMapping
+   public void deleteOneOrderById(@PathVariable Long orderId){
+        orderService.deleteOneOrderById(orderId);
+   }
+
 }

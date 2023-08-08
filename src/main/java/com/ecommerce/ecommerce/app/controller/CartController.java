@@ -23,6 +23,10 @@ public class CartController {
         return cartService.getAllCarts(userId);
     }
 
+    @GetMapping("/{cartId}")
+    public Cart getOneCartById(@PathVariable Long cartId){
+        return cartService.getOneCartById(cartId);
+    }
     @PostMapping
     public Cart createOneCart(@RequestBody CartCreateRequest newCartRequest) {
         return cartService.createOneCart(newCartRequest);

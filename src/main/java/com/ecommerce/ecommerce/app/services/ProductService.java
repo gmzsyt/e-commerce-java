@@ -1,7 +1,6 @@
 package com.ecommerce.ecommerce.app.services;
 
 import com.ecommerce.ecommerce.app.entities.Product;
-import com.ecommerce.ecommerce.app.entities.User;
 import com.ecommerce.ecommerce.app.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +24,7 @@ public class ProductService {
     }
 
 
-    public Product getOneUser(Long productId) {
+    public Product getOneProductById(Long productId) {
         return productRepository.findById(productId).orElse(null);
     }
 

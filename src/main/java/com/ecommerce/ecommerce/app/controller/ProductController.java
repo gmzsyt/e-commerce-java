@@ -1,7 +1,6 @@
 package com.ecommerce.ecommerce.app.controller;
 
 import com.ecommerce.ecommerce.app.entities.Product;
-import com.ecommerce.ecommerce.app.entities.User;
 import com.ecommerce.ecommerce.app.services.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +26,7 @@ public class ProductController {
     }
     @GetMapping("/{userId}")
     public Product getOneProduct(@PathVariable Long productId){
-        return productService.getOneUser(productId);
+        return productService.getOneProductById(productId);
     }
     @PutMapping("/{userId}")
     public Product updateOneProduct(@PathVariable Long productId,@RequestBody Product newProduct){
